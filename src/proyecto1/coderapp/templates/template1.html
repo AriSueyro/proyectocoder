@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Primer template</h1> <br>
+    <h2>¿Como te encuentras {{nombre}}?</h2>
+    <h3>Segun vemos, tu edad es {{edad}}</h3>
+    <br>
+
+    <h3>Y los cursos que tienes realizados son:</h3>
+
+    {% for curso in cursos %}
+    <li>{{ curso }} </li>
+    {% endfor %}
+
+    {% if edad > 18 %}
+    <h2>Es mayor</h2>
+    {% endif %}
+</body>
+</html>
