@@ -21,3 +21,6 @@ def leer_alumnos(request):
 
     http = render(request, "template1.html", contexto)
     return HttpResponse(http)
+
+def index(request):
+    return render(request, "index.html")
