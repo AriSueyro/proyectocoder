@@ -23,16 +23,24 @@ def leer_alumnos(request):
     return HttpResponse(http)
 
 def index(request):
+
     return render(request, "index.html")
 
 def profesor(request):
-    return HttpResponse("Vista profesor")
+    
+    contexto = {
+        "nombre": "Ramiro",
+        "edad": 50,
+        "cursos": ["Python", "Java", "JS"],
+    }
+    
+    return render(request, "profesor.html", contexto)
 
 def estudiante(request):
-    return HttpResponse("Vista estudiante")
+    return render(request, "estudiante")
 
 def curso(request):
-    return HttpResponse("Vista curso")
+    return render(request, "curso")
 
 def entregable(request):
-    return HttpResponse("Vista entregable")
+    return render(request, "entregable")

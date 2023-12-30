@@ -5,9 +5,9 @@ from coderapp.views import leer_profesor, leer_alumnos, index, profesor, estudia
 urlpatterns = [
     path('profesores/', leer_profesor),
     path("alumnos/", leer_alumnos),
-    path("", index),
+    path("", index, name = 'index'),
     path("profesor/", profesor, name = 'profesor'),
-    path("estudiante/", estudiante),
-    path("curso/", curso),
-    path("entregable/", entregable),
+    path("estudiante/", estudiante, name = 'estudiante'),
+    path("curso/", curso, name = 'curso'),
+    path("entregable/", entregable, name = 'entregable'),
 ]
