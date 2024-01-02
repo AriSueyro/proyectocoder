@@ -37,10 +37,10 @@ def profesor(request):
     return render(request, "profesor.html", contexto)
 
 def estudiante(request):
-    return render(request, "estudiante")
+    return render(request, "estudiante.html")
 
 def curso(request):
-    return render(request, "curso")
+    return render(request, "curso.html")
 
 def entregable(request):
-    return render(request, "entregable")
+    return render(request, "entregable.html")
