@@ -44,3 +44,6 @@ def curso(request):
 
 def entregable(request):
     return render(request, "entregable.html")
+
+def formulario(request):
+    return render(request, "formulario.html")
