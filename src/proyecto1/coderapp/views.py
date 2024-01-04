@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from coderapp.models import Profesor, Curso
-from coderapp.forms import CursoFormulario
+from coderapp.models import Profesor, Curso, Entregable
+from coderapp.forms import CursoFormulario, EntregableFormulario
 
 def leer_profesor(request):
 
@@ -44,7 +44,22 @@ def curso(request):
     return render(request, "curso.html")
 
 def entregable(request):
-    return render(request, "entregable.html")
+
+    if request.method == "POST":
+        formulario = EntregableFormulario(request.POST)
+
+        if formulario.is_valid():
+            data = formulario.cleaned_data
+
+            entregable = Entregable(nombre = data.get("nombre"), hoy = data.get("hoy"))
+            entregable.save()
+        return render(request, "index.html")
+    
+    else:
+        formulario = EntregableFormulario()
+
+
+    return render(request, "entregable.html", {"formulario": formulario})
 
 def formulario(request):
     
@@ -59,5 +74,8 @@ def formulario(request):
         curso.save()
 
         return render(request, "index.html")
+    
+    else: 
+        formulario = CursoFormulario()
 
-    return render(request, "formulario.html")
+    return render(request, "formulario.html", {"formulario": formulario})
