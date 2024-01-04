@@ -2,6 +2,8 @@
 {% load static %}
 {% block contenidoDinamico %}
 
+<h1 style="text-align: center;"> Entregas</h1>
+
 <form action="{% url 'entregable' %}" method="POST">{% csrf_token %}
     <table>
         {{formulario.as_table}}

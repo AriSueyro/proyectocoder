@@ -3,11 +3,9 @@ from django.urls import path, include
 from coderapp.views import leer_profesor, leer_alumnos, index, profesor, estudiante, curso, entregable, formulario
 
 urlpatterns = [
-    path('profesores/', leer_profesor),
-    path("alumnos/", leer_alumnos),
     path("", index, name = 'index'),
-    path("profesor/", profesor, name = 'profesor'),
-    path("estudiante/", estudiante, name = 'estudiante'),
+    path("profesores/", profesor, name = 'profesor'),
+    path("estudiantes/", estudiante, name = 'estudiante'),
     path("curso/", curso, name = 'curso'),
     path("entregable/", entregable, name = 'entregable'),
     path("formulario/", formulario, name = 'formulario'),

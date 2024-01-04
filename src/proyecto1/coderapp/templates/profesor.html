@@ -1,9 +1,13 @@
 {% extends 'dinamico.html' %}
 {% load static %}
 {% block contenidoDinamico %}
+<h1 style="text-align: center;"> Ingreso de profesores</h1>
 
-<h1>Esta es la vista profesor</h1>
-
-<h2>Y el nombre del profe es {{nombre}}</h2>
+<form action="{% url 'profesor' %}" method="POST">{% csrf_token %}
+    <table>
+        {{formulario.as_table}}
+    </table>
+    <input type="submit" value="Enviar">
+</form>
 
 {% endblock %}

@@ -2,6 +2,8 @@
 {% load static %}
 {% block contenidoDinamico %}
 
+<h1 style="text-align: center;"> Ingreso de Estudiantes</h1>
+
 <form action="{% url 'estudiante' %}" method="POST">{% csrf_token %}
     <table>
         {{formulario.as_table}}
